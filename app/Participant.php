@@ -10,4 +10,9 @@ class Participant extends Model
         'firstName', 'lastName', 'emailAddress', 'streetAddress',
         'city', 'state', 'zipCode', 'phoneNumber'
     ];
+
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
+    }
 }

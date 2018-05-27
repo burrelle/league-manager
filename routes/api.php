@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('participants', 'ParticipantsController@index');
+Route::get('teams', 'TeamsController@index');

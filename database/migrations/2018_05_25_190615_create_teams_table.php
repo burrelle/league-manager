@@ -19,6 +19,7 @@ class CreateTeamsTable extends Migration
             $table->integer('captain');
             $table->foreign('captain')->references('id')->on('participants');
             $table->string('league');
+            $table->timestamps();
         });
     }
 

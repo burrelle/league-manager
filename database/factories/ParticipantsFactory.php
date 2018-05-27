@@ -11,6 +11,7 @@ $factory->define(App\Participant::class, function (Faker $faker) {
 	    'city' => $faker->city,
 	    'state' => $faker->stateAbbr,
 	    'zipCode' => $faker->postcode,
-	    'phoneNumber' => $faker->phoneNumber,
+		'phoneNumber' => $faker->phoneNumber,
+		'team_id' => $faker->randomElement(DB::table('Teams')->pluck('id')->toArray()),
     ];
 });
