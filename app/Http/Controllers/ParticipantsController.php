@@ -46,7 +46,7 @@ class ParticipantsController extends Controller
      */
     public function show(Participant $participant)
     {
-        //
+        return $participant;
     }
 
     /**
@@ -80,6 +80,7 @@ class ParticipantsController extends Controller
      */
     public function destroy(Participant $participant)
     {
-        //
+        $participant->delete();
+        return response()->json(null, 204);
     }
 }

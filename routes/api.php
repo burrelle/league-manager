@@ -13,5 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+// Participants Routes
 Route::get('participants', 'ParticipantsController@index');
+Route::get('participants/{participant}', 'ParticipantsController@show');
+Route::delete('participants/{participant}', 'ParticipantsController@destroy');
+// Teams Routes
 Route::get('teams', 'TeamsController@index');
