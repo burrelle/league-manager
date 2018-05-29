@@ -11,6 +11,6 @@ class ParticipantsTableSeeder extends Seeder
      */
     public function run()
     {
-        $participants = factory(App\Participant::class, 10)->create();
+        $participants = factory(App\Participant::class, 50)->create();
     }
 }
