@@ -20,3 +20,8 @@ Serve the application:
 ```
 php artisan serve
 ```
+Run test suite:  
+```
+npm install
+npm test
+```
