@@ -21,3 +21,7 @@ Route::post('participants', 'ParticipantsController@store');
 Route::patch('participants/{participant}', 'ParticipantsController@update');
 // Teams Routes
 Route::get('teams', 'TeamsController@index');
+Route::get('teams/{team}', 'TeamsController@show');
+Route::delete('teams/{team}', 'TeamsController@destroy');
+Route::post('teams', 'TeamsController@store');
+Route::patch('teams/{team}', 'TeamsController@update');

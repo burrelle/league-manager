@@ -24,7 +24,7 @@ class TeamsController extends Controller
      */
     public function create()
     {
-        //
+        // TODO: Add a form and link it here.
     }
 
     /**
@@ -35,7 +35,7 @@ class TeamsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Team::create($request->all());
     }
 
     /**
@@ -46,7 +46,7 @@ class TeamsController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        return $team;
     }
 
     /**
@@ -57,7 +57,7 @@ class TeamsController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        // TODO: Add a form and link it.
     }
 
     /**
@@ -69,7 +69,7 @@ class TeamsController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $team->update($request->all());
     }
 
     /**
@@ -80,6 +80,7 @@ class TeamsController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        return response()->json(null, 204);
     }
 }
