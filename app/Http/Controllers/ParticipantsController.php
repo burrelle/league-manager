@@ -24,7 +24,7 @@ class ParticipantsController extends Controller
      */
     public function create()
     {
-        //
+        // TODO: Link to a Vue Component
     }
 
     /**
@@ -35,7 +35,7 @@ class ParticipantsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Participant::create($request->all());
     }
 
     /**
@@ -57,7 +57,7 @@ class ParticipantsController extends Controller
      */
     public function edit(Participant $participant)
     {
-        //
+        // TODO: Edit a participant form
     }
 
     /**
@@ -69,7 +69,7 @@ class ParticipantsController extends Controller
      */
     public function update(Request $request, Participant $participant)
     {
-        //
+        $participant->update($request->all());
     }
 
     /**
