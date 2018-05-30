@@ -17,7 +17,9 @@ class CreateTeamsTable extends Migration
             $table->increments('id');
             $table->string('teamName');
             $table->integer('captain')->nullable();
-            $table->foreign('captain')->references('id')->on('participants');
+            $table->foreign('captain')->references('id')
+                ->on('participants')
+                ->onDelete('cascade');
             $table->string('league');
             $table->timestamps();
         });

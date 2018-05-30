@@ -24,7 +24,9 @@ class CreateParticipantsTable extends Migration
             $table->integer('zipCode');
             $table->string('phoneNumber');
             $table->integer('team_id')->nullable();
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')
+                ->on('teams')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
