@@ -1,5 +1,3 @@
-// Source: https://github.com/kathrynmbrown/node-api-testing-example/blob/master/test/test.js
-
 var should = require('chai').should(),
     expect = require('chai').expect,
     supertest = require('supertest'),
