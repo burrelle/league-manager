@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Participant;
 use Illuminate\Http\Request;
+use App\Team;
 
 class ParticipantsController extends Controller
 {
@@ -82,5 +83,29 @@ class ParticipantsController extends Controller
     {
         $participant->delete();
         return response()->json(null, 204);
+    }
+
+    /**
+     * Add a player to a team
+     * 
+     * @param  \App\Participant  $participant
+     * @param \App\Team $team
+     * @return \Illuminate\Http\Response
+     */
+    public function addToTeam(Participant $participant, Team $team)
+    {
+        $participant->update(['team_id' => $team->id]);
+    }
+
+    /**
+     * Remove a player from a team
+     * 
+     * @param  \App\Participant  $participant
+     * @param \App\Team $team
+     * @return \Illuminate\Http\Response
+     */
+    public function removeFromTeam(Participant $participant, Team $team)
+    {
+        $participant->update(['team_id' => null]);
     }
 }

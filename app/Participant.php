@@ -8,7 +8,7 @@ class Participant extends Model
 {
     protected $fillable = [
         'firstName', 'lastName', 'emailAddress', 'streetAddress',
-        'city', 'state', 'zipCode', 'phoneNumber'
+        'city', 'state', 'zipCode', 'phoneNumber', 'team_id'
     ];
 
     public function team()

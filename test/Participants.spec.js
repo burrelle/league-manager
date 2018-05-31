@@ -155,5 +155,16 @@ describe('Participant Endpoints', () => {
                     });
             });
     });
+
+    it('returns a 404 error for badly formatted data', (done) => {
+         api.get('/participants/abcdefg')
+             .set('Accept', 'application/json')
+             .expect(404)
+             .end((err, res) => {
+                expect(err);
+                done();
+             });
+
+    });
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Team;
 use Illuminate\Http\Request;
 
@@ -82,5 +83,10 @@ class TeamsController extends Controller
     {
         $team->delete();
         return response()->json(null, 204);
+    }
+
+    public function teamRoster(Team $team)
+    {
+        return DB::table('participants')->where('team_id', $team->id)->get();
     }
 }
