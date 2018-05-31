@@ -1,5 +1,9 @@
 # League Manager Final Project - CS496  
-To start create a database:  
+Install dependencies:
+```
+composer install
+```
+Create a database:  
 ```
 touch database/database.sqlite
 ```
