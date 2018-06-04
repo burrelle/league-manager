@@ -1,7 +1,7 @@
 var should = require('chai').should(),
     expect = require('chai').expect,
     supertest = require('supertest'),
-    api = supertest('http://league-manager.test/api'), // localhost:8000
+    api = supertest('http://localhost:8000/api'), // localhost:8000
     faker = require('faker');
 
 describe('Functional Test', () => {
@@ -47,4 +47,31 @@ describe('Functional Test', () => {
             });
     });
 
+    it('adds a captain to a team', (done) => {
+        api.post('/teams/1/captain/1')
+            .set('Accept', 'application/json')
+            .expect(200)
+            .then(() => {
+                api.get('/teams/1')
+                .set('Accept', 'application/json')
+                .then((res) => {
+                    expect(res.body.captain).to.eq('1');
+                    done();
+                });
+            });
+    });
+
+    it('removes a participant that is a captain', (done) => {
+        api.delete('/participants/1')
+            .set('Accept', 'application/json')
+            .expect(204)
+            .then(() => {
+                api.get('/teams/1')
+                    .set('Accept', 'application/json')
+                    .then((res) => {
+                        expect(res.body.captain).to.eq(null);
+                        done();
+                    });
+            })
+    });
 });

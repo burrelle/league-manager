@@ -94,5 +94,6 @@ class TeamsController extends Controller
     public function addCaptain(Team $team, Participant $participant)
     {
         $team->update(['captain' => $participant->id]);
+        $participant->update(["team_id" => $team->id]);
     }
 }

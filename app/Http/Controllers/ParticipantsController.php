@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Participant;
 use Illuminate\Http\Request;
 use App\Team;
+use DB;
 
 class ParticipantsController extends Controller
 {
@@ -81,8 +82,18 @@ class ParticipantsController extends Controller
      */
     public function destroy(Participant $participant)
     {
-        $participant->delete();
-        return response()->json(null, 204);
+        $team = DB::table('teams')->where('captain', $participant->id)->get();
+        if($team == null) {
+            $participant->delete();
+            return response()->json(null, 204);
+        }
+        else {
+            foreach((array)$team as $team){
+                DB::table('teams')->where('id', $team[0]->id)->update(['captain' => null]);
+            }
+            $participant->delete();
+            return response()->json(null, 204);
+        }
     }
 
     /**
