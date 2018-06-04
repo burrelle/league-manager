@@ -19,7 +19,7 @@ class CreateTeamsTable extends Migration
             $table->integer('captain')->nullable();
             $table->foreign('captain')->references('id')
                 ->on('participants')
-                ->onDelete('cascade');
+                ->onDelete('set null');
             $table->string('league');
             $table->timestamps();
             $table->engine = 'InnoDB';

@@ -26,7 +26,7 @@ class CreateParticipantsTable extends Migration
             $table->integer('team_id')->nullable();
             $table->foreign('team_id')->references('id')
                 ->on('teams')
-                ->onDelete('cascade');
+                ->onDelete('set null');
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
