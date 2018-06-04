@@ -28,6 +28,7 @@ class CreateParticipantsTable extends Migration
                 ->on('teams')
                 ->onDelete('cascade');
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -22,6 +22,7 @@ class CreateTeamsTable extends Migration
                 ->onDelete('cascade');
             $table->string('league');
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 
