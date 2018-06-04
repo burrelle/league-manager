@@ -28,3 +28,4 @@ Route::delete('teams/{team}', 'TeamsController@destroy');
 Route::post('teams', 'TeamsController@store');
 Route::patch('teams/{team}', 'TeamsController@update');
 Route::get('teams/{team}/roster', 'TeamsController@teamRoster');
+Route::post('teams/{team}/captain/{participant}', 'TeamsController@addCaptain');

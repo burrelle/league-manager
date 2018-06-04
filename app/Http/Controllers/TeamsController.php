@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Team;
+use App\Participant;
 use Illuminate\Http\Request;
 
 class TeamsController extends Controller
@@ -88,5 +89,10 @@ class TeamsController extends Controller
     public function teamRoster(Team $team)
     {
         return DB::table('participants')->where('team_id', $team->id)->get();
+    }
+
+    public function addCaptain(Team $team, Participant $participant)
+    {
+        $team->update(['captain' => $participant->id]);
     }
 }
