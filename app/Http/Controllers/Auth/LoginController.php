@@ -74,6 +74,6 @@ class LoginController extends Controller
             $newUser->save();
             Auth::login($newUser);
         }
-        return redirect('/');
+        return redirect('/home');
     }
 }
