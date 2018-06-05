@@ -62,9 +62,9 @@
                         </div>
                     </form>
                 </div>
-                <a type="button" class="btn btn-secondary" href="/login/google">
-                                    Login with Google
-</a>
+                <a class="btn btn-danger" href="/login/google" role="button">
+                    <i class="fab fa-google-plus-g"></i> - Login with Google 
+                </a>
             </div>
         </div>
     </div>
