@@ -26,7 +26,7 @@ class ParticipantsController extends Controller
      */
     public function create()
     {
-        // TODO: Link to a Vue Component
+        return view('forms.participant');
     }
 
     /**
@@ -49,17 +49,6 @@ class ParticipantsController extends Controller
     public function show(Participant $participant)
     {
         return $participant;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Participant  $participant
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Participant $participant)
-    {
-        // TODO: Edit a participant form
     }
 
     /**

@@ -26,7 +26,7 @@ class TeamsController extends Controller
      */
     public function create()
     {
-        // TODO: Add a form and link it here.
+        return view('forms.team');
     }
 
     /**
@@ -49,17 +49,6 @@ class TeamsController extends Controller
     public function show(Team $team)
     {
         return $team;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Team $team)
-    {
-        // TODO: Add a form and link it.
     }
 
     /**
@@ -86,11 +75,24 @@ class TeamsController extends Controller
         return response()->json(null, 204);
     }
 
+    /**
+     * Get roster resource from storage.
+     *
+     * @param  \App\Team  $team
+     * @return \Illuminate\Http\Response
+     */
     public function teamRoster(Team $team)
     {
         return DB::table('participants')->where('team_id', $team->id)->get();
     }
 
+    /**
+     * Add a captain to a specific team.
+     *
+     * @param  \App\Team  $team
+     * @param  \App\Participant $participant
+     * @return \Illuminate\Http\Response
+     */
     public function addCaptain(Team $team, Participant $participant)
     {
         $team->update(['captain' => $participant->id]);

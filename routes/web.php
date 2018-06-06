@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('login/google', 'Auth\LoginController@redirectToProvider');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('participants/create', 'ParticipantsController@create')->middleware('auth');
+Route::get('teams/create', 'TeamsController@create')->middleware('auth');
+Route::get('/docs', function() {
+    return view('docs');
+})->middleware('auth');
