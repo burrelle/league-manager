@@ -1,7 +1,7 @@
 var should = require('chai').should(),
     expect = require('chai').expect,
     supertest = require('supertest'),
-    api = supertest('http://localhost:8000/api'), // localhost:8000
+    api = supertest('http://localhost:8000/api'), // league-manager.test
     faker = require('faker');
 
 describe('Functional Test', () => {
