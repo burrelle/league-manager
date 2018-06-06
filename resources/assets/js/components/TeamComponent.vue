@@ -16,7 +16,7 @@
                 </select>
             </div>
             <div class="col-sm">
-                <button type="submit" class="btn btn-primary btn-sm" @click="changeTeam">Assign</button>
+                <button type="submit" class="btn btn-primary btn-sm">Assign</button>
             </div>
         </div>
         </form>
@@ -55,7 +55,7 @@
         methods: {
             changeTeam: function() {
                 axios.post("/api/teams/" + this.team + "/captain/" + this.participant).then((result) => {
-                    console.log(result);
+                    window.location = '/api/participants/' + this.participant
                 }).catch(err => {
                     console.log(err);
                 })

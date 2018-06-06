@@ -47871,8 +47871,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         changeTeam: function changeTeam() {
+            var _this2 = this;
+
             axios.post("/api/teams/" + this.team + "/captain/" + this.participant).then(function (result) {
-                console.log(result);
+                window.location = '/api/participants/' + _this2.participant;
             }).catch(function (err) {
                 console.log(err);
             });
@@ -48002,23 +48004,26 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-sm" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary btn-sm",
-                attrs: { type: "submit" },
-                on: { click: _vm.changeTeam }
-              },
-              [_vm._v("Assign")]
-            )
-          ])
+          _vm._m(0)
         ])
       ]
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary btn-sm", attrs: { type: "submit" } },
+        [_vm._v("Assign")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
