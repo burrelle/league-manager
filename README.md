@@ -1,4 +1,15 @@
 # League Manager Final Project - CS496  
+Server requirements per Laravel Documentation:  
+```
+PHP >= 7.1.3
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
+Ctype PHP Extension
+JSON PHP Extension
+```
 Install dependencies:
 ```
 composer install
