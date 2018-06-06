@@ -47464,7 +47464,7 @@ exports = module.exports = __webpack_require__(46)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47841,6 +47841,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47868,7 +47870,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        changeTeam: function changeTeam() {}
+        changeTeam: function changeTeam() {
+            axios.post("/api/teams/" + this.team + "/captain/" + this.participant).then(function (result) {
+                console.log(result);
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
     }
 });
 
@@ -47883,120 +47891,134 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("header", [_vm._v("Assign Participant to Team")]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm" }, [
-        _c(
-          "select",
-          {
-            directives: [
+    _c(
+      "form",
+      {
+        attrs: { method: "post" },
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.changeTeam($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm" }, [
+            _c(
+              "select",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.participant,
-                expression: "participant"
-              }
-            ],
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.participant = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
-          [
-            _c("option", { attrs: { value: "" } }, [
-              _vm._v("Select a participant")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.participants, function(participant) {
-              return _c(
-                "option",
-                { key: participant.id, domProps: { value: participant.id } },
-                [
-                  _vm._v(
-                    _vm._s(participant.firstName) +
-                      " " +
-                      _vm._s(participant.lastName) +
-                      " "
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.participant,
+                    expression: "participant"
+                  }
+                ],
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.participant = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("Select a participant")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.participants, function(participant) {
+                  return _c(
+                    "option",
+                    {
+                      key: participant.id,
+                      domProps: { value: participant.id }
+                    },
+                    [
+                      _vm._v(
+                        _vm._s(participant.firstName) +
+                          " " +
+                          _vm._s(participant.lastName) +
+                          " "
+                      )
+                    ]
                   )
-                ]
-              )
-            })
-          ],
-          2
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm" }, [
-        _c(
-          "select",
-          {
-            directives: [
+                })
+              ],
+              2
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm" }, [
+            _c(
+              "select",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.team,
-                expression: "team"
-              }
-            ],
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.team = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
-          [
-            _c("option", { attrs: { value: "" } }, [_vm._v("No Team")]),
-            _vm._v(" "),
-            _vm._l(_vm.teams, function(team) {
-              return _c(
-                "option",
-                { key: team.id, domProps: { value: team.id } },
-                [_vm._v(_vm._s(team.teamName))]
-              )
-            })
-          ],
-          2
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(0)
-    ])
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.team,
+                    expression: "team"
+                  }
+                ],
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.team = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [_vm._v("No Team")]),
+                _vm._v(" "),
+                _vm._l(_vm.teams, function(team) {
+                  return _c(
+                    "option",
+                    { key: team.id, domProps: { value: team.id } },
+                    [_vm._v(_vm._s(team.teamName))]
+                  )
+                })
+              ],
+              2
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-sm",
+                attrs: { type: "submit" },
+                on: { click: _vm.changeTeam }
+              },
+              [_vm._v("Assign")]
+            )
+          ])
+        ])
+      ]
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm" }, [
-      _c(
-        "button",
-        { staticClass: "btn btn-primary btn-sm", attrs: { type: "submit" } },
-        [_vm._v("Assign")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

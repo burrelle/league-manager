@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <header>Assign Participant to Team</header>
+        <form class="" method="post" @submit.prevent="changeTeam">
         <div class="row">
             <div class="col-sm">
                 <select v-model="participant">
@@ -15,9 +16,10 @@
                 </select>
             </div>
             <div class="col-sm">
-                <button type="submit" class="btn btn-primary btn-sm">Assign</button>
+                <button type="submit" class="btn btn-primary btn-sm" @click="changeTeam">Assign</button>
             </div>
         </div>
+        </form>
     </div>
 </template>
 
@@ -51,8 +53,12 @@
                 });
         },
         methods: {
-            changeTeam: () => {
-
+            changeTeam: function() {
+                axios.post("/api/teams/" + this.team + "/captain/" + this.participant).then((result) => {
+                    console.log(result);
+                }).catch(err => {
+                    console.log(err);
+                })
             }
         }
     };

@@ -41,7 +41,11 @@ Serve the application:
 ```
 php artisan serve
 ```
-Run test suite:  
+In a new tab:  
+```
+npm run dev
+```
+To run test suite:  
 ```
 npm install
 npm test
