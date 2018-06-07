@@ -9,6 +9,7 @@ Tokenizer PHP Extension
 XML PHP Extension
 Ctype PHP Extension
 JSON PHP Extension
+Composer
 ```
 Install dependencies:
 ```
