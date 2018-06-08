@@ -72,7 +72,7 @@ class ParticipantsController extends Controller
     public function destroy(Participant $participant)
     {
         $team = DB::table('teams')->where('captain', $participant->id)->get();
-        if($team == null) {
+        if($team->isEmpty()) {
             $participant->delete();
             return response()->json(null, 204);
         }
