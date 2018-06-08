@@ -11,6 +11,7 @@
                         <li><a href="/docs">API Documentation</a></li>
                         <li><a href="/participants/create">Create a Participant</a></li>
                         <li><a href="/teams/create">Create a Team</a></li>
+                        <team-component></team-component>
                     </ul>
                 </div>
             </div>

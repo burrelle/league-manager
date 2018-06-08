@@ -5,7 +5,7 @@
         @csrf
         <div class="form-group">
             <label for="teamName">Team Name</label>
-            <input type="text" class="form-control" id="teamName" name="teamName" aria-describedby="emailHelp" placeholder="Enter your team name...">
+            <input type="text" class="form-control" id="teamName" name="teamName" aria-describedby="emailHelp" placeholder="Enter your team name..." required>
         </div>
         <div class="form-group">
             <label for="league">League</label>
