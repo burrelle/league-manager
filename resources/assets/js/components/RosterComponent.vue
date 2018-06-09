@@ -2,9 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <select v-model="team">
-                    <option v-for="team in teams" :value=team.id :key="team.id">{{team.teamName}}</option>
-                </select>
+                <ul style="list-style-type: none;">
+                    <li v-for="team in teams" :key="team.id">
+                        <a :href="'/api/teams/' + team.id + '/roster'"> {{team.teamName}} </a>   
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

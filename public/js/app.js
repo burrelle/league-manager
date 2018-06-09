@@ -48120,7 +48120,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48131,6 +48131,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -48173,38 +48175,16 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm" }, [
         _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.team,
-                expression: "team"
-              }
-            ],
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.team = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
+          "ul",
+          { staticStyle: { "list-style-type": "none" } },
           _vm._l(_vm.teams, function(team) {
-            return _c(
-              "option",
-              { key: team.id, domProps: { value: team.id } },
-              [_vm._v(_vm._s(team.teamName))]
-            )
+            return _c("li", { key: team.id }, [
+              _c(
+                "a",
+                { attrs: { href: "/api/teams/" + team.id + "/roster" } },
+                [_vm._v(" " + _vm._s(team.teamName) + " ")]
+              )
+            ])
           })
         )
       ])
