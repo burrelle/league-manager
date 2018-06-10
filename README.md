@@ -37,6 +37,10 @@ Seed the database:
 ```
 php artisan migrate:refresh --seed
 ```
+Generate application key:  
+```
+php artisan key:generate
+```
 Serve the application:  
 ```
 php artisan serve
