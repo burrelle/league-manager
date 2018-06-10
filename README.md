@@ -23,12 +23,12 @@ Set the .env file:
 ```
 cp .env.example .env
 ```
-Point the environmental variable for SQLite:   
+Point the environmental variable in .env file for SQLite:   
 ```
 DB_CONNECTION=sqlite
 DB_DATABASE=/absolute/path/to/database
 ```
-Create environmental variable for Google API:
+Create environmental variable for Google API (SSO Google):
 ```
 GOOGLE_CLIENT_ID=googleClientID
 GOOGLE_CLIENT_SECRET=googleClientSecret
@@ -41,16 +41,15 @@ Generate application key:
 ```
 php artisan key:generate
 ```
+Install node dependencies:
+```
+npm install
+```
 Serve the application:  
 ```
 php artisan serve
 ```
-In a new tab:  
+To run test suite (new tab):  
 ```
-npm run dev
-```
-To run test suite:  
-```
-npm install
 npm test
 ```
