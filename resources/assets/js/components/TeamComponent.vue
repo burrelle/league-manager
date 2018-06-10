@@ -24,6 +24,7 @@
 </template>
 
 <script>
+    import swal from 'sweetalert';
     export default {
         data() {
             return {
@@ -31,7 +32,6 @@
                 participant: '',
                 teams: {},
                 team: '',
-                postData: {},
             };
         },
         mounted() {
@@ -55,7 +55,11 @@
         methods: {
             changeTeam: function() {
                 axios.post("/api/teams/" + this.team + "/captain/" + this.participant).then((result) => {
-                    window.location = '/api/participants/' + this.participant
+                    swal({
+                        title: "Player added to team",
+                        text: "Well done!",
+                        icon: "success",
+                    });
                 }).catch(err => {
                     console.log(err);
                 })

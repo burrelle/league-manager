@@ -11,7 +11,8 @@
                         <li><a href="/docs">API Documentation</a></li>
                         <li><a href="/participants/create">Create a Participant</a></li>
                         <li><a href="/teams/create">Create a Team</a></li>
-                        <roster-component></roster-component>
+                        <li><a href="/rosters">View Roster by Team</a></li>
+                        <li><a href="/assign">Assign a Participant to Team</a></li>
                     </ul>
                 </div>
             </div>

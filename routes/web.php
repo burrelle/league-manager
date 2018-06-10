@@ -25,3 +25,9 @@ Route::get('teams/create', 'TeamsController@create')->middleware('auth');
 Route::get('/docs', function() {
     return view('docs');
 })->middleware('auth');
+Route::get('/rosters', function () {
+    return view('rosters');
+})->middleware('auth');
+Route::get('/assign', function () {
+    return view('assign');
+})->middleware('auth');

@@ -25,6 +25,7 @@
         "body-parser": "^1.18.3",
         "chai": "^4.1.2",
         "mocha": "^5.2.0",
-        "supertest": "^3.1.0"
+        "supertest": "^3.1.0",
+        "sweetalert": "^2.1.0"
     }
 }
