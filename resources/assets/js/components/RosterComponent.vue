@@ -4,7 +4,7 @@
             <div class="col-sm">
                 <ul style="list-style-type: none;">
                     <li v-for="team in teams" :key="team.id">
-                        <a :href="'/api/teams/' + team.id + '/roster'"> {{team.teamName}} </a>   
+                        <a :href="'/api/teams/' + team.id + '/roster'"> {{team.teamName}} </a>
                     </li>
                 </ul>
             </div>
@@ -28,7 +28,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
