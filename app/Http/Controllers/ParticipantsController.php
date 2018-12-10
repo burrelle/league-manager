@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use App\Team;
 use App\Participant;
 use Illuminate\Http\Request;
-use App\Team;
-use DB;
 
 class ParticipantsController extends Controller
 {
@@ -87,7 +87,7 @@ class ParticipantsController extends Controller
 
     /**
      * Add a player to a team
-     * 
+     *
      * @param  \App\Participant  $participant
      * @param \App\Team $team
      * @return \Illuminate\Http\Response
@@ -99,7 +99,7 @@ class ParticipantsController extends Controller
 
     /**
      * Remove a player from a team
-     * 
+     *
      * @param  \App\Participant  $participant
      * @param \App\Team $team
      * @return \Illuminate\Http\Response
